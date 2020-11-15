@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://Jimmy9876.github.io</id>
     <title>Gridea</title>
-    <updated>2020-11-15T04:03:11.752Z</updated>
+    <updated>2020-11-15T04:53:00.396Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://Jimmy9876.github.io"/>
     <link rel="self" href="http://Jimmy9876.github.io/atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>http://Jimmy9876.github.io/images/avatar.png</logo>
     <icon>http://Jimmy9876.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[2、Matplotlib画图种类]]></title>
+        <id>http://Jimmy9876.github.io/post/2matplotlib-hua-tu-chong-lei/</id>
+        <link href="http://Jimmy9876.github.io/post/2matplotlib-hua-tu-chong-lei/">
+        </link>
+        <updated>2020-11-15T04:50:31.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="1-scatter-散点图">1、Scatter 散点图</h3>
+<pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+n = 1024    # data size
+X = np.random.normal(0, 1, n) # 每一个点的X值
+Y = np.random.normal(0, 1, n) # 每一个点的Y值
+plt.scatter(X, Y, s=75, alpha=.5)
+
+plt.xlim(-1.5, 1.5)
+plt.xticks(())  # ignore xticks
+plt.ylim(-1.5, 1.5)
+plt.yticks(())  # ignore yticks
+
+plt.show()
+</code></pre>
+<h3 id="2-bar-柱状图">2、Bar 柱状图</h3>
+<h4 id="1-生成基本图形">1、生成基本图形</h4>
+<pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+n = 12
+X = np.arange(n)
+Y1 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+Y2 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)
+
+plt.bar(X, +Y1)
+plt.bar(X, -Y2)
+
+plt.xlim(-.5, n)
+plt.xticks(())
+plt.ylim(-1.25, 1.25)
+plt.yticks(())
+
+plt.show()
+</code></pre>
+<h4 id="2-加颜色和数据">2、加颜色和数据</h4>
+<pre><code>plt.bar(X, +Y1, facecolor='yellow', edgecolor='white')
+plt.bar(X, -Y2, facecolor='green', edgecolor='white')
+</code></pre>
+<h4 id="3-加数值">3、加数值</h4>
+<pre><code>for x, y in zip(X, Y1):
+    # ha: horizontal alignment
+    # va: vertical alignment
+    plt.text(x + 0.4, y + 0.05, '%.2f' % y, ha='center', va='bottom')
+
+for x, y in zip(X, Y2):
+    # ha: horizontal alignment
+    # va: vertical alignment
+    plt.text(x + 0.4, -y - 0.05, '%.2f' % y, ha='center', va='top')
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>http://Jimmy9876.github.io/post/hello-gridea/</id>
